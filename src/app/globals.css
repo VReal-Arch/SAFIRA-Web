@@ -1,26 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Default variables (can be used if needed) */
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Tailwind v4 automatically handles dark mode via system preference 
+   if you don't enforce a 'class' strategy. */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  /* Default to Light Mode colors, let Tailwind classes override for Dark */
+  color: #171717;
+  background: #ffffff; 
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom Scrollbar that adapts */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-[#121212];
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-[#5a5a5a] rounded-full border-4 border-white dark:border-[#121212];
 }
