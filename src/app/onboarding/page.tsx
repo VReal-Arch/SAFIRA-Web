@@ -3,7 +3,8 @@ import Image from 'next/image';
 
 export default function OnboardingPage() {
   return (
-    <div className="flex h-[80vh] flex-col items-center justify-center text-center px-4">
+    // 1. BACKGROUND: Forced to Gray-50 (Light) always. Removed 'dark:bg-black'.
+    <div className="flex h-screen flex-col items-center justify-center text-center px-4 bg-gray-50">
       
       <div className="mb-6">
         <Image 
@@ -16,14 +17,16 @@ export default function OnboardingPage() {
         />
       </div>
 
-      {/* TEXT COLOR FIX:
-          text-gray-900 = Hitam (saat Light Mode)
-          dark:text-white = Putih (saat Dark Mode)
-      */}
-      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Welcome to SAFIRA</h1>
-      <p className="mb-8 text-gray-600 dark:text-gray-400">Your AI Mind and Care System.</p>
+      {/* 2. TEXT: Forced to Black/Gray-900 always. Removed 'dark:text-white'. */}
+      <h1 className="mb-2 text-2xl font-bold text-gray-900">
+        Welcome to SAFIRA
+      </h1>
       
-      <Link href="/name" className="rounded-md bg-teal-600 px-8 py-3 font-semibold text-white hover:bg-teal-700 transition">
+      <p className="mb-8 text-gray-600">
+        Your Mind and Care System.
+      </p>
+      
+      <Link href="/name" className="rounded-md bg-teal-600 px-8 py-3 font-semibold text-white hover:bg-teal-700 transition hover:scale-105">
         Start Journey
       </Link>
     </div>
