@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Sidebar from '@/components/Sidebar'; // Gunakan @ jika tsconfig sudah benar, atau relative path
-import BottomNav from '@/components/BottomNav';
+import Sidebar from './components/Sidebar'; // Gunakan @ jika tsconfig sudah benar, atau relative path
+import BottomNav from './components/BottomNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
