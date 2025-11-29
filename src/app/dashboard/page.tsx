@@ -1,9 +1,10 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
-export default function DashboardPage() {
+// --- PART 1: The Main Content (Logic stays here) ---
+function DashboardContent() {
   const searchParams = useSearchParams();
   const initialTab = searchParams.get('tab') || 'beranda';
   
@@ -196,5 +197,14 @@ export default function DashboardPage() {
         </div>
       )}
     </div>
+  );
+}
+
+// --- PART 2: The Wrapper (This fixes the build error) ---
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center text-gray-500">Loading Dashboard...</div>}>
+      <DashboardContent />
+    </Suspense>
   );
 }
