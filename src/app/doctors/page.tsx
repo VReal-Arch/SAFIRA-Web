@@ -5,25 +5,25 @@ import Image from 'next/image';
 // Data Dokter (Updated: Dr. House & Gender Adjusted)
 const doctorsData = [
   // 1. Dr. House (Male)
-  { id: 1, name: "Dr. Gregory House", field: "Head of Diagnostic Medicine & Psychiatry", img: "/doc-1.jpg", contact: "mailto:house@safira.clinic" },
+  { id: 1, name: "Dr. Gregory House", field: "Head of Diagnostic Medicine & Psychiatry", img: "/doc-1.jpeg", contact: "mailto:house@safira.clinic" },
   
   // 2. Male (Tetap)
-  { id: 2, name: "Dr. Budi Santoso, Sp.KJ", field: "Psychiatrist (Mood Disorders)", img: "/doc-2.jpg", contact: "tel:+6281234567890" },
+  { id: 2, name: "Dr. Budi Santoso, Sp.KJ", field: "Psychiatrist (Mood Disorders)", img: "/doc-2.jpeg", contact: "tel:+6281234567890" },
   
   // 3. Male (Dulu Sarah -> Sekarang Samuel)
-  { id: 3, name: "Dr. Samuel Jenkins", field: "Trauma & PTSD Counselor", img: "/doc-3.jpg", contact: "mailto:samuel@safira.clinic" },
+  { id: 3, name: "Dr. Samuel Jenkins", field: "Trauma & PTSD Counselor", img: "/doc-3.jpeg", contact: "mailto:samuel@safira.clinic" },
   
   // 4. Male (Tetap)
-  { id: 4, name: "Dr. Kenji Tanaka", field: "Sleep Specialist & Somnologist", img: "/doc-4.jpg", contact: "mailto:kenji@safira.clinic" },
+  { id: 4, name: "Dr. Kenji Tanaka", field: "Sleep Specialist & Somnologist", img: "/doc-4.jpeg", contact: "mailto:kenji@safira.clinic" },
   
   // 5. Male (Dulu Maria -> Sekarang Mario)
-  { id: 5, name: "Dr. Mario Rodriguez", field: "Family & Relationship Therapist", img: "/doc-5.jpg", contact: "mailto:mario@safira.clinic" },
+  { id: 5, name: "Dr. Mario Rodriguez", field: "Family & Relationship Therapist", img: "/doc-5.jpeg", contact: "mailto:mario@safira.clinic" },
   
   // 6. FEMALE (Dulu Ahmad -> Sekarang Dr. Lisa - "Except doc-6")
-  { id: 6, name: "Dr. Lisa Cuddy", field: "Psychiatrist (Adolescent Health)", img: "/doc-6.jpg", contact: "tel:+628987654321" },
+  { id: 6, name: "Dr. Lisa Cuddy", field: "Psychiatrist (Adolescent Health)", img: "/doc-6.jpeg", contact: "tel:+628987654321" },
   
   // 7. Male (Dulu Emily -> Sekarang Eric)
-  { id: 7, name: "Dr. Eric Chen", field: "Clinical Social Worker", img: "/doc-7.jpg", contact: "mailto:eric@safira.clinic" },
+  { id: 7, name: "Dr. Eric Chen", field: "Clinical Social Worker", img: "/doc-7.jpeg", contact: "mailto:eric@safira.clinic" },
 ];
 
 export default function DoctorsPage() {
