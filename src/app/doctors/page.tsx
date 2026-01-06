@@ -2,15 +2,28 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Data for the 7 Doctors (You can edit this later)
+// Data Dokter (Updated: Dr. House & Gender Adjusted)
 const doctorsData = [
-  { id: 1, name: "Dr. Anya Sharma", field: "Clinical Psychologist (Anxiety Specialist)", img: "/doc-1.jpeg", contact: "mailto:anya@safira.clinic" },
-  { id: 2, name: "Dr. Budi Santoso, Sp.KJ", field: "Psychiatrist (Mood Disorders)", img: "/doc-2.jpeg", contact: "tel:+6281234567890" },
-  { id: 3, name: "Sarah Jenkins, M.Psi", field: "Counselor (Trauma & Recovery)", img: "/doc-3.jpeg", contact: "mailto:sarah@safira.clinic" },
-  { id: 4, name: "Dr. Kenji Tanaka", field: "Sleep Specialist & Somnologist", img: "/doc-4.jpeg", contact: "mailto:kenji@safira.clinic" },
-  { id: 5, name: "Maria Rodriguez, Ph.D.", field: "Family & Relationship Therapist", img: "/doc-5.jpeg", contact: "mailto:maria@safira.clinic" },
-  { id: 6, name: "Dr. Ahmad Hidayat", field: "Psychiatrist (Adolescent Mental Health)", img: "/doc-6.jpeg", contact: "tel:+628987654321" },
-  { id: 7, name: "Emily Chen, LCSW", field: "Licensed Clinical Social Worker", img: "/doc-7.jpeg", contact: "mailto:emily@safira.clinic" },
+  // 1. Dr. House (Male)
+  { id: 1, name: "Dr. Gregory House", field: "Head of Diagnostic Medicine & Psychiatry", img: "/doc-1.jpg", contact: "mailto:house@safira.clinic" },
+  
+  // 2. Male (Tetap)
+  { id: 2, name: "Dr. Budi Santoso, Sp.KJ", field: "Psychiatrist (Mood Disorders)", img: "/doc-2.jpg", contact: "tel:+6281234567890" },
+  
+  // 3. Male (Dulu Sarah -> Sekarang Samuel)
+  { id: 3, name: "Dr. Samuel Jenkins", field: "Trauma & PTSD Counselor", img: "/doc-3.jpg", contact: "mailto:samuel@safira.clinic" },
+  
+  // 4. Male (Tetap)
+  { id: 4, name: "Dr. Kenji Tanaka", field: "Sleep Specialist & Somnologist", img: "/doc-4.jpg", contact: "mailto:kenji@safira.clinic" },
+  
+  // 5. Male (Dulu Maria -> Sekarang Mario)
+  { id: 5, name: "Dr. Mario Rodriguez", field: "Family & Relationship Therapist", img: "/doc-5.jpg", contact: "mailto:mario@safira.clinic" },
+  
+  // 6. FEMALE (Dulu Ahmad -> Sekarang Dr. Lisa - "Except doc-6")
+  { id: 6, name: "Dr. Lisa Cuddy", field: "Psychiatrist (Adolescent Health)", img: "/doc-6.jpg", contact: "tel:+628987654321" },
+  
+  // 7. Male (Dulu Emily -> Sekarang Eric)
+  { id: 7, name: "Dr. Eric Chen", field: "Clinical Social Worker", img: "/doc-7.jpg", contact: "mailto:eric@safira.clinic" },
 ];
 
 export default function DoctorsPage() {
@@ -39,7 +52,7 @@ export default function DoctorsPage() {
                 alt={doc.name}
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
-                // Using a placeholder if image is missing during development
+                // Placeholder jika gambar belum ada
                 onError={(e) => { e.currentTarget.src = "https://placehold.co/400x500?text=No+Image"; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
