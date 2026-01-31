@@ -51,12 +51,15 @@ export default function Sidebar() {
           <span className="text-sm font-medium">Programs</span>
         </Link>
 
-        {/* --- TOMBOL DOKTER BARU --- */}
+        <Link href="/ai-chat" className={linkClass('/ai-chat')}>
+          <span className="text-2xl">🤖</span>
+          <span className="text-sm font-medium">Talk to Safira AI</span>
+        </Link>
+
         <Link href="/doctors" className={linkClass('/doctors')}>
           <span className="text-2xl">🩺</span>
           <span className="text-sm font-medium">Doctor Consultation</span>
         </Link>
-        {/* ------------------------- */}
 
         <div className="pt-4 mt-4 border-t border-gray-100 dark:border-gray-800">
           <Link href="/" className="flex items-center space-x-4 px-2 py-2 text-gray-600 hover:text-teal-600 dark:text-gray-400 dark:hover:text-white transition rounded-md hover:bg-gray-50 dark:hover:bg-[#181818]">
