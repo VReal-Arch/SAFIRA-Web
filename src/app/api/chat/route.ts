@@ -1,16 +1,33 @@
-import { google } from '@ai-sdk/google';
-import { streamText } from 'ai';
+import { createGoogleGenerativeAI } from '@ai-sdk/google';
+import { generateText } from 'ai';
+import { NextResponse } from 'next/server';
 
-export const maxDuration = 30;
+// 1. SETUP API KEY
+const google = createGoogleGenerativeAI({
+  // 👇 TEMPEL API KEY BARU ANDA DISINI 👇
+  apiKey: 'AIzaSyAhFwg_CFVx3JYgDA_AS7Xaoj6MMncKFvc', 
+});
+
+export const maxDuration = 60;
 
 export async function POST(req: Request) {
-  const { messages } = await req.json();
+  try {
+    const { messages } = await req.json();
+    
+    // 2. KITA GUNAKAN ALIAS 'LATEST' (JALUR AMAN/STABIL)
+    // Ini otomatis memilih model Flash paling stabil yang punya kuota gratis
+    const { text } = await generateText({
+      model: google('gemini-flash-latest'), 
+      messages,
+    });
 
-  const result = streamText({
-    model: google('models/gemini-1.5-flash'), // Model gratis & cepat dari Google
-    messages,
-    system: "You are SAFIRA, a compassionate, empathetic, and professional mental health assistant. You listen actively, validate feelings, and provide calm, evidence-based advice. You are NOT a doctor, so for serious crises, always refer them to the 'SOS Crisis' feature or a real doctor. Keep responses concise and warm.",
-  });
+    return NextResponse.json({ role: 'assistant', content: text });
 
-  return result.toTextStreamResponse();
+  } catch (error: any) {
+    console.error("❌ ERROR SERVER:", error);
+    // Tampilkan pesan error yang lebih bersahabat
+    return NextResponse.json({ 
+      error: "Maaf, server Google sedang sibuk atau kuota habis. Coba lagi nanti." 
+    }, { status: 500 });
+  }
 }
