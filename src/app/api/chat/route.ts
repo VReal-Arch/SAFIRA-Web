@@ -3,9 +3,9 @@ import { generateText } from 'ai';
 import { NextResponse } from 'next/server';
 
 // 1. SETUP API KEY
+// GANTI BAGIAN INI:
 const google = createGoogleGenerativeAI({
-  // 👇 TEMPEL API KEY BARU ANDA DISINI 👇
-  apiKey: 'AIzaSyAhFwg_CFVx3JYgDA_AS7Xaoj6MMncKFvc', 
+  apiKey: process.env.GEMINI_API_KEY, // <--- Dia akan ambil otomatis dari brankas
 });
 
 export const maxDuration = 60;
